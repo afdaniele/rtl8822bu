@@ -21,8 +21,25 @@ $ sudo apt install build-essential libc6-dev linux-headers-`dpkg-architecture -q
 
 On the other distros, please refer their build instruction for kernel modules (Because I don't know so much any other than Debian/Ubuntu). And it would be appriciated if you would tell me the way.
 
+Ubuntu kernel 4.15.30 or later also requires:
+```
+sudo apt install -y libelf-dev
+```
+
 
 ## Build and install.
+
+### DKMS install
+
+On Ubuntu and Debian derivatives it is recommended to use DKMS so that the module builds automatically for each newly acquired kernel.
+Put the repository into `/usr/src/rtl8822bu-4.15`, and execute:
+```
+dkms add     rtl8822bu/4.15
+dkms build   rtl8822bu/4.15
+dkms install rtl8822bu/4.15
+```
+
+### Manual install
 
 Currently tested with Linux kernel 4.15.17 and 4.16.5 on X86_64 platform **only**.
 
