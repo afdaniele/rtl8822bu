@@ -1,3 +1,4 @@
 sftp-config.json
 *.o
 *.ko
+*.o.cmd
