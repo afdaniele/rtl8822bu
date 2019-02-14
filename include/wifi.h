@@ -1001,9 +1001,14 @@ typedef enum _HT_CAP_AMPDU_DENSITY {
  * A-PMDU buffer sizes
  * According to IEEE802.11n spec size varies from 8K to 64K (in powers of 2)
  */
+#if (LINUX_VERSION_CODE < KERNEL_VERSION(4, 19, 0))
+/* Since Linux-4.19, IEEE80211_MAX_AMPDU_BUF has been bumped to support HE.
+ * And these are already defined in 'include/linux/ieee80211.h'.
+ * See https://github.com/torvalds/linux/commit/b8042b3da925f390c1482bf9dc0898dc0b3ea7b5
+ */
 #define IEEE80211_MIN_AMPDU_BUF 0x8
 #define IEEE80211_MAX_AMPDU_BUF 0x40
-
+#endif
 
 /* Spatial Multiplexing Power Save Modes */
 #define WLAN_HT_CAP_SM_PS_STATIC		0
