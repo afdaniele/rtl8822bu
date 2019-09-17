@@ -4,7 +4,7 @@ Driver for 802.11ac USB Adapter with RTL8822BU chipset.
 
 Currently, only STA/Monitor Mode is supported, no AP.
 
-A few known wireless cards that use this driver include 
+A few known wireless cards that use this driver include
 * [Edimax EW-7822ULC](http://us.edimax.com/edimax/merchandise/merchandise_detail/data/edimax/us/wireless_adapters_ac1200_dual-band/ew-7822ulc/)
 * [Edimax EW-7822UTC](https://www.edimax.com/edimax/merchandise/merchandise_detail/data/edimax/global/wireless_adapters_ac1200_dual-band/ew-7822utc/)
 * [ASUS AC-53 NANO](https://www.asus.com/Networking/USB-AC53-Nano/)
@@ -41,7 +41,7 @@ dkms install rtl8822bu/4.15
 
 ### Manual install
 
-Currently tested with Linux kernel 4.15.17 and 4.16.5 on X86_64 platform **only**.
+Currently tested with Linux kernel 5.0.0-27, 4.15.17 and 4.16.5 on X86_64 platform **only**.
 
 To build, you have to retrieve source and run `make`.
 If via Git, do following:
@@ -53,7 +53,7 @@ $ make
 $ sudo make install
 ```
 
-Or via tarball, do:
+Or via tarball (**kernel 4.15 only**), do:
 
 ```sh
 $ curl -LO https://github.com/FomalhautWeisszwerg/rtl8822bu/archive/release-for-linux-4.15.tar.gz
